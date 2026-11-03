@@ -155,7 +155,7 @@ fun NavManager(recetaDao: RecetaDao, lecturaDao: LecturaDao) {
                 RecetarioView(
                     viewModel = recetarioViewModel,
                     onBuscar = { navegarAPestana(navController, Rutas.RECETAS) },
-                    onAbrir = { id -> navController.navigate(Rutas.detalleReceta(id)) }
+                    onAbrir = { id -> navController.navigate(Rutas.detalleReceta(id)) { launchSingleTop = true } }
                 )
             }
 
@@ -185,7 +185,7 @@ fun NavManager(recetaDao: RecetaDao, lecturaDao: LecturaDao) {
             composable(Rutas.HISTORIAL) {
                 HistorialView(
                     viewModel = historialViewModel,
-                    onAbrirDetalle = { id -> navController.navigate(Rutas.detalleLectura(id)) },
+                    onAbrirDetalle = { id -> navController.navigate(Rutas.detalleLectura(id)) { launchSingleTop = true } },
                     onMensaje = mostrarMensaje
                 )
             }

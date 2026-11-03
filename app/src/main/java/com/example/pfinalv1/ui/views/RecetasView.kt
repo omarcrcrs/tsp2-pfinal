@@ -2,6 +2,7 @@
 
 package com.example.pfinalv1.ui.views
 
+import android.content.ActivityNotFoundException
 import android.content.Intent
 import android.net.Uri
 import androidx.compose.foundation.horizontalScroll
@@ -320,7 +321,13 @@ private fun RecetaEncontrada(
             item {
                 Spacer(Modifier.height(16.dp))
                 OutlinedButton(
-                    onClick = { context.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(url))) },
+                    onClick = {
+                        try {
+                            context.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(url)))
+                        } catch (e: ActivityNotFoundException) {
+                            // Sin navegador ni app de YouTube (p. ej. un emulador mínimo): no hay nada que abrir
+                        }
+                    },
                     modifier = Modifier.fillMaxWidth()
                 ) {
                     Text(text = stringResource(R.string.ver_video))

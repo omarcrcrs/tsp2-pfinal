@@ -143,48 +143,53 @@ fun CocinaContent(
     acciones: AccionesCocina,
     modifier: Modifier = Modifier
 ) {
+    // Sin Arrangement.spacedBy: las tarjetas animadas ocupan 0 dp cuando están ocultas y, con
+    // spacedBy, dejarían un hueco doble. Cada bloque pone su propio Spacer.
     Column(
         modifier = modifier
             .fillMaxSize()
             .verticalScroll(rememberScrollState())
-            .padding(16.dp),
-        verticalArrangement = Arrangement.spacedBy(16.dp)
+            .padding(16.dp)
     ) {
         TarjetaConexion(estado = estado, acciones = acciones)
+        Spacer(modifier = Modifier.height(16.dp))
 
         // Receta del recetario que se está cocinando (se fija desde su detalle)
         AnimatedVisibility(visible = estado.recetaEnCurso.isNotBlank()) {
-            Card(
-                modifier = Modifier.fillMaxWidth(),
-                colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.secondaryContainer)
-            ) {
-                Row(
-                    modifier = Modifier.padding(start = 16.dp, end = 8.dp, top = 8.dp, bottom = 8.dp),
-                    verticalAlignment = Alignment.CenterVertically
+            Column {
+                Card(
+                    modifier = Modifier.fillMaxWidth(),
+                    colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.secondaryContainer)
                 ) {
-                    Icon(
-                        painter = painterResource(id = R.drawable.ic_recetario),
-                        contentDescription = null,
-                        tint = MaterialTheme.colorScheme.onSecondaryContainer,
-                        modifier = Modifier.size(22.dp)
-                    )
-                    Spacer(modifier = Modifier.width(12.dp))
-                    Column(modifier = Modifier.weight(1f)) {
-                        Text(
-                            text = stringResource(R.string.cocinando),
-                            style = MaterialTheme.typography.labelSmall,
-                            color = MaterialTheme.colorScheme.onSecondaryContainer
+                    Row(
+                        modifier = Modifier.padding(start = 16.dp, end = 8.dp, top = 8.dp, bottom = 8.dp),
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        Icon(
+                            painter = painterResource(id = R.drawable.ic_recetario),
+                            contentDescription = null,
+                            tint = MaterialTheme.colorScheme.onSecondaryContainer,
+                            modifier = Modifier.size(22.dp)
                         )
-                        Text(
-                            text = estado.recetaEnCurso,
-                            style = MaterialTheme.typography.titleMedium,
-                            color = MaterialTheme.colorScheme.onSecondaryContainer
-                        )
-                    }
-                    TextButton(onClick = acciones.onTerminarCoccion) {
-                        Text(text = stringResource(R.string.terminar_coccion))
+                        Spacer(modifier = Modifier.width(12.dp))
+                        Column(modifier = Modifier.weight(1f)) {
+                            Text(
+                                text = stringResource(R.string.cocinando),
+                                style = MaterialTheme.typography.labelSmall,
+                                color = MaterialTheme.colorScheme.onSecondaryContainer
+                            )
+                            Text(
+                                text = estado.recetaEnCurso,
+                                style = MaterialTheme.typography.titleMedium,
+                                color = MaterialTheme.colorScheme.onSecondaryContainer
+                            )
+                        }
+                        TextButton(onClick = acciones.onTerminarCoccion) {
+                            Text(text = stringResource(R.string.terminar_coccion))
+                        }
                     }
                 }
+                Spacer(modifier = Modifier.height(16.dp))
             }
         }
 
@@ -195,37 +200,41 @@ fun CocinaContent(
             nombreObjetivo = estado.nombreObjetivo,
             modoSimulacion = estado.modoSimulacion
         )
+        Spacer(modifier = Modifier.height(16.dp))
 
         // Aviso animado: aparece solo cuando la lectura llega al objetivo
         AnimatedVisibility(visible = estado.objetivoAlcanzado) {
-            Card(
-                modifier = Modifier.fillMaxWidth(),
-                colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.tertiaryContainer)
-            ) {
-                Row(
-                    modifier = Modifier.padding(16.dp),
-                    verticalAlignment = Alignment.CenterVertically
+            Column {
+                Card(
+                    modifier = Modifier.fillMaxWidth(),
+                    colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.tertiaryContainer)
                 ) {
-                    Icon(
-                        painter = painterResource(id = R.drawable.ic_alerta),
-                        contentDescription = null,
-                        tint = MaterialTheme.colorScheme.onTertiaryContainer,
-                        modifier = Modifier.size(28.dp)
-                    )
-                    Spacer(modifier = Modifier.width(12.dp))
-                    Column {
-                        Text(
-                            text = stringResource(R.string.objetivo_alcanzado),
-                            style = MaterialTheme.typography.titleMedium,
-                            color = MaterialTheme.colorScheme.onTertiaryContainer
+                    Row(
+                        modifier = Modifier.padding(16.dp),
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        Icon(
+                            painter = painterResource(id = R.drawable.ic_alerta),
+                            contentDescription = null,
+                            tint = MaterialTheme.colorScheme.onTertiaryContainer,
+                            modifier = Modifier.size(28.dp)
                         )
-                        Text(
-                            text = stringResource(R.string.objetivo_alcanzado_detalle, formatearTemperatura(estado.objetivoC)),
-                            style = MaterialTheme.typography.bodyMedium,
-                            color = MaterialTheme.colorScheme.onTertiaryContainer
-                        )
+                        Spacer(modifier = Modifier.width(12.dp))
+                        Column {
+                            Text(
+                                text = stringResource(R.string.objetivo_alcanzado),
+                                style = MaterialTheme.typography.titleMedium,
+                                color = MaterialTheme.colorScheme.onTertiaryContainer
+                            )
+                            Text(
+                                text = stringResource(R.string.objetivo_alcanzado_detalle, formatearTemperatura(estado.objetivoC)),
+                                style = MaterialTheme.typography.bodyMedium,
+                                color = MaterialTheme.colorScheme.onTertiaryContainer
+                            )
+                        }
                     }
                 }
+                Spacer(modifier = Modifier.height(16.dp))
             }
         }
 
@@ -257,12 +266,16 @@ fun CocinaContent(
                 )
             }
         }
+        Spacer(modifier = Modifier.height(16.dp))
 
         TarjetaObjetivo(estado = estado, acciones = acciones)
+        Spacer(modifier = Modifier.height(16.dp))
 
         TarjetaLed(estado = estado, acciones = acciones)
+        Spacer(modifier = Modifier.height(16.dp))
 
         TarjetaSimulacion(estado = estado, acciones = acciones)
+        Spacer(modifier = Modifier.height(16.dp))
 
         Button(
             onClick = acciones.onGuardarLectura,
@@ -279,10 +292,11 @@ fun CocinaContent(
             Spacer(modifier = Modifier.width(8.dp))
             Text(text = stringResource(R.string.guardar_lectura))
         }
+        Spacer(modifier = Modifier.height(16.dp))
 
         TarjetaBitacora(lineas = estado.bitacora)
 
-        Spacer(modifier = Modifier.height(8.dp))
+        Spacer(modifier = Modifier.height(24.dp))
     }
 }
 

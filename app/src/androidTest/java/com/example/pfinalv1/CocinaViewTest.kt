@@ -47,10 +47,11 @@ class CocinaViewTest {
             }
         }
 
-        // 68.36 se muestra redondeado a un decimal: "68.4 °C"; faltan 5.6 °C → nivel "Calentando"
-        composeTestRule.onNodeWithText(formatearTemperatura(68.36)).assertIsDisplayed()
-        composeTestRule.onNodeWithText(contexto.getString(R.string.nivel_calentando)).assertIsDisplayed()
-        composeTestRule.onNodeWithText(contexto.getString(R.string.etiqueta_simulacion)).assertIsDisplayed()
+        // 68.36 se muestra redondeado a un decimal: "68.4 °C"; faltan 5.6 °C → nivel "Calentando".
+        // performScrollTo: la pantalla es desplazable, así la prueba no depende del tamaño del teléfono.
+        composeTestRule.onNodeWithText(formatearTemperatura(68.36)).performScrollTo().assertIsDisplayed()
+        composeTestRule.onNodeWithText(contexto.getString(R.string.nivel_calentando)).performScrollTo().assertIsDisplayed()
+        composeTestRule.onNodeWithText(contexto.getString(R.string.etiqueta_simulacion)).performScrollTo().assertIsDisplayed()
     }
 
     @Test
@@ -66,7 +67,7 @@ class CocinaViewTest {
         composeTestRule.onNodeWithText(contexto.getString(R.string.objetivo_alcanzado))
             .performScrollTo()
             .assertIsDisplayed()
-        composeTestRule.onNodeWithText(contexto.getString(R.string.nivel_alcanzado)).assertIsDisplayed()
+        composeTestRule.onNodeWithText(contexto.getString(R.string.nivel_alcanzado)).performScrollTo().assertIsDisplayed()
     }
 
     @Test

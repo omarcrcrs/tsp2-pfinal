@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <!-- API del clima (Open-Meteo) -->
+    <!-- API de recetas (TheMealDB) y descarga de las fotos con Coil -->
     <uses-permission android:name="android.permission.INTERNET" />
 
     <!-- Bluetooth clásico (SPP) con el ESP32.
