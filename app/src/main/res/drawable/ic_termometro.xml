@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <!-- Ícono propio de TermoLab (estilo de línea, basado en Feather Icons, licencia MIT). -->
+    <path
+        android:pathData="M14,14.76 V3.5 a2.5,2.5 0 0 0 -5,0 v11.26 a4.5,4.5 0 1 0 5,0 z"
+        android:fillColor="#00000000"
+        android:strokeColor="#FFFFFFFF"
+        android:strokeWidth="2"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round" />
+    <path
+        android:pathData="M9.3,18.5 a2.2,2.2 0 1 0 4.4,0 a2.2,2.2 0 1 0 -4.4,0 z"
+        android:fillColor="#FFFFFFFF" />
+    <path
+        android:pathData="M10.6,9 H12.4 V16.5 H10.6 Z"
+        android:fillColor="#FFFFFFFF" />
+</vector>

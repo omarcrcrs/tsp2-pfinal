@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ComeMejor</string>
+
+    <!-- Pestañas y títulos -->
+    <string name="pestana_recetario">Recetario</string>
+    <string name="pestana_recetas">Recetas</string>
+    <string name="pestana_cocina">Cocina</string>
+    <string name="pestana_historial">Historial</string>
+    <string name="titulo_recetario">Mi recetario</string>
+    <string name="titulo_recetas">Recetas de TheMealDB</string>
+    <string name="titulo_cocina">Termómetro de cocina</string>
+    <string name="titulo_historial">Historial de temperaturas</string>
+    <string name="titulo_dispositivos">Dispositivos Bluetooth</string>
+    <string name="titulo_detalle_receta">Receta #%1$d</string>
+    <string name="titulo_detalle_lectura">Lectura #%1$d</string>
+    <string name="regresar">Regresar</string>
+
+    <!-- Recetario (Room) -->
+    <string name="leyendo_bd">Leyendo la base de datos…</string>
+    <string name="recetario_vacio">Tu recetario está vacío</string>
+    <string name="recetario_vacio_detalle">Toca «Buscar recetas» para traer la primera desde TheMealDB.</string>
+    <string name="buscar_recetas">Buscar recetas</string>
+    <string name="consultar_por_id">Consultar registro por id</string>
+    <string name="consultar">Consultar</string>
+    <string name="resumen_recetario">%1$d recetas guardadas · %2$d favoritas</string>
+
+    <!-- Detalle de receta -->
+    <string name="consultando_registro">Consultando el registro…</string>
+    <string name="receta_no_existe">No existe ninguna receta con id %1$d</string>
+    <string name="receta_no_existe_detalle">Revisa el número en la lista del recetario (aparece como #id).</string>
+    <string name="cocinar_con_termometro">Cocinar con el termómetro</string>
+    <string name="objetivo_sugerido">Categoría %1$s → temperatura segura sugerida: %2$s</string>
+    <string name="ir_a_cocinar">Ir a Cocina con esta receta</string>
+    <string name="ultimas_temperaturas">Últimas temperaturas registradas con esta receta</string>
+    <string name="datos_registro">Datos del registro (columna · tipo)</string>
+    <string name="modificar_registro">Modificar registro</string>
+    <string name="calificacion">Calificación</string>
+    <string name="favorita">Favorita</string>
+    <string name="veces_cocinada">Veces cocinada: %1$d</string>
+    <string name="mas_uno_hoy">+1 hoy</string>
+    <string name="notas_personales">Notas personales</string>
+    <string name="guardar_notas">Guardar notas</string>
+    <string name="ingredientes_cantidad">Ingredientes (%1$d)</string>
+    <string name="instrucciones">Instrucciones</string>
+    <string name="eliminar_receta">Eliminar esta receta del recetario</string>
+    <string name="eliminar_receta_titulo">¿Eliminar esta receta?</string>
+    <string name="eliminar_receta_confirmacion">«%1$s» se borrará de la base de datos y no se puede deshacer.</string>
+    <string name="receta_eliminada">Receta eliminada del recetario</string>
+
+    <!-- Recetas (API TheMealDB) -->
+    <string name="buscar_receta_etiqueta">Buscar receta (ej. \"Arrabiata\")</string>
+    <string name="buscar">Buscar</string>
+    <string name="receta_aleatoria">Receta aleatoria</string>
+    <string name="recetas_inicial">Busca algo rico y saludable</string>
+    <string name="recetas_inicial_detalle">Escribe un nombre, pide una receta aleatoria o explora una categoría; después podrás guardarla en tu recetario.</string>
+    <string name="consultando_api">Consultando TheMealDB…</string>
+    <string name="recetas_error_detalle">Revisa tu conexión a internet e intenta de nuevo.</string>
+    <string name="recetas_en_categoria">%1$d recetas en la categoría %2$s · toca una para ver el detalle</string>
+    <string name="volver_a_la_lista">← Volver a la lista</string>
+    <string name="guardar_en_recetario">Guardar en mi recetario</string>
+    <string name="ver_video">▶ Ver video de preparación</string>
+
+    <!-- Estados del Bluetooth y de la conexión -->
+    <string name="bt_no_soportado">Este teléfono no tiene Bluetooth</string>
+    <string name="bt_apagado">Bluetooth apagado: enciéndelo desde los ajustes del teléfono</string>
+    <string name="bt_encendido">Bluetooth encendido</string>
+    <string name="conexion_inactiva">Sin conexión</string>
+    <string name="conexion_conectando">Conectando a %1$s…</string>
+    <string name="conexion_conectado">Conectado a %1$s</string>
+    <string name="conexion_error">Error: %1$s</string>
+    <string name="conexion_desconectado">Desconectado</string>
+
+    <!-- Cocina (termómetro ESP32) -->
+    <string name="termometro_esp32">Termómetro ESP32</string>
+    <string name="elegir_dispositivo">Elegir dispositivo</string>
+    <string name="desconectar">Desconectar</string>
+    <string name="cocinando">Cocinando</string>
+    <string name="terminar_coccion">Terminar</string>
+    <string name="sensor_lm35">Sensor LM35</string>
+    <string name="etiqueta_simulacion">Simulación</string>
+    <string name="sin_lectura">-- °C</string>
+    <string name="sin_lectura_detalle">Todavía no hay lecturas</string>
+    <string name="ultima_lectura">Última lectura: %1$s</string>
+    <string name="objetivo_coccion">Objetivo de cocción</string>
+    <string name="faltan_grados">faltan %1$s</string>
+    <string name="nivel_lejos">Lejos</string>
+    <string name="nivel_calentando">Calentando</string>
+    <string name="nivel_casi">Casi listo</string>
+    <string name="nivel_alcanzado">¡Listo!</string>
+    <string name="objetivo_alcanzado">Temperatura alcanzada</string>
+    <string name="objetivo_alcanzado_detalle">El platillo llegó al objetivo de %1$s</string>
+    <string name="leer_temperatura">Leer temperatura</string>
+    <string name="iniciar_monitoreo">Monitoreo automático</string>
+    <string name="detener_monitoreo">Detener monitoreo</string>
+    <string name="led_esp32">LED del ESP32</string>
+    <string name="led">LED</string>
+    <string name="led_encendido">Encendido (GPIO5 en alto)</string>
+    <string name="led_apagado">Apagado</string>
+    <string name="control_automatico">LED automático al llegar al objetivo</string>
+    <string name="control_automatico_detalle">Enciende el LED al alcanzar el objetivo y lo apaga 0.5 °C abajo (histéresis)</string>
+    <string name="modo_simulacion">Modo simulación</string>
+    <string name="modo_simulacion_detalle">Genera lecturas sin la tarjeta (útil en el emulador y para pruebas)</string>
+    <string name="simular_frio">Enfriar −10°</string>
+    <string name="simular_calor">Calentar +10°</string>
+    <string name="guardar_lectura">Guardar lectura en el historial</string>
+    <string name="lectura_guardada">Lectura guardada en el historial</string>
+    <string name="primero_toma_lectura">Primero toma una lectura de temperatura</string>
+    <string name="bitacora_comunicacion">Bitácora de comunicación</string>
+    <string name="bitacora_vacia">Aquí se verán los comandos enviados (→) y las respuestas del ESP32 (←)</string>
+
+    <!-- Dispositivos -->
+    <string name="permisos_titulo">Se necesitan permisos de Bluetooth</string>
+    <string name="permisos_detalle">Android 12 o superior pide autorizar el acceso a dispositivos cercanos para ver los emparejados y conectarse.</string>
+    <string name="permisos_negados">Sin los permisos de Bluetooth la app no puede conectarse al ESP32</string>
+    <string name="conceder_permisos">Conceder permisos</string>
+    <string name="bt_no_disponible_titulo">Bluetooth no disponible</string>
+    <string name="bt_no_disponible_detalle">Enciende el Bluetooth del teléfono y toca Actualizar lista.</string>
+    <string name="buscando_emparejados">Leyendo dispositivos emparejados…</string>
+    <string name="sin_dispositivos">No hay dispositivos emparejados</string>
+    <string name="sin_dispositivos_detalle">Empareja el ESP32_BT_Serial desde Ajustes → Bluetooth del teléfono y vuelve a actualizar.</string>
+    <string name="dispositivos_emparejados">%1$d dispositivos emparejados (los ESP32 aparecen primero)</string>
+    <string name="tipo_dispositivo">Tipo: %1$s · Emparejado</string>
+    <string name="seleccionado">Seleccionado</string>
+    <string name="actualizar_lista">Actualizar lista</string>
+    <string name="conectar">Conectar</string>
+    <string name="ayuda_titulo">Kit del laboratorio</string>
+    <string name="ayuda_pasos">1. Carga el sketch EBESP32_LED_Bt.ino en el ESP32 (LM35 en GPIO34, LED en GPIO5).\n2. Empareja «ESP32_BT_Serial» desde Ajustes → Bluetooth.\n3. Elígelo aquí y toca Conectar; en Cocina podrás leer la temperatura y prender el LED.</string>
+    <string name="ayuda_protocolo_etiqueta">Protocolo:</string>
+    <string name="ayuda_protocolo">\'1\' LED on · \'0\' LED off · \'t\' → \"24.36C\"</string>
+
+    <!-- Historial de temperaturas -->
+    <string name="sin_lecturas">Historial vacío</string>
+    <string name="sin_lecturas_detalle">Toma una lectura en Cocina y toca «Guardar lectura» para registrarla aquí.</string>
+    <string name="resumen_lecturas">%1$d lecturas guardadas</string>
+    <string name="promedio">Promedio</string>
+    <string name="minima">Mínima</string>
+    <string name="maxima">Máxima</string>
+    <string name="resumen_objetivos">%1$d alcanzaron su objetivo · %2$d tomadas cocinando una receta</string>
+    <string name="toca_para_detalle">Toca una lectura para ver el detalle</string>
+    <string name="vaciar_historial">Vaciar historial</string>
+    <string name="vaciar_historial_confirmacion">Se eliminarán las %1$d lecturas guardadas. Esta acción no se puede deshacer.</string>
+    <string name="historial_vaciado">Historial vaciado</string>
+    <string name="lectura_eliminada">Lectura eliminada</string>
+    <string name="eliminar">Eliminar</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="lectura_sin_receta">Medición libre (sin receta)</string>
+    <string name="registro_numero_fecha_objetivo">Registro #%1$d · %2$s · objetivo %3$s</string>
+
+    <!-- Detalle de lectura -->
+    <string name="registro_no_existe">La lectura #%1$d ya no existe en la base de datos</string>
+    <string name="objetivo_y_diferencia">Objetivo: %1$s · diferencia: %2$s</string>
+    <string name="sin_receta">(medición libre)</string>
+    <string name="sin_dispositivo">(sin dispositivo)</string>
+    <string name="en_fahrenheit">En Fahrenheit</string>
+    <string name="en_kelvin">En Kelvin</string>
+    <string name="nota">Nota</string>
+    <string name="nota_sugerencia">Ej. caldo de la olla grande, sensor en el centro…</string>
+    <string name="guardar_nota">Guardar nota</string>
+    <string name="nota_guardada">Nota guardada</string>
+    <string name="eliminar_lectura">Eliminar esta lectura</string>
+</resources>
